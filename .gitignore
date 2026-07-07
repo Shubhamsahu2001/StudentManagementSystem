@@ -1,0 +1,36 @@
+# ==========================
+# Visual Studio
+# ==========================
+.vs/
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# ==========================
+# Angular
+# ==========================
+node_modules/
+dist/
+.angular/cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+
+# ==========================
+# OS files
+# ==========================
+Thumbs.db
+Desktop.ini
+
+# ==========================
+# IDE
+# ==========================
+.vscode/

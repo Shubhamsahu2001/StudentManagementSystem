@@ -1,6 +1,6 @@
-<div class="container mt-4">
+<div class="container mt-2">
 
-  <h2 class="text-center mb-4">Student List</h2>
+  <h2 class="text-center bg-body-secondary mb-3">Student List</h2>
   <!-- <div>
     <button class="btn btn-md btn-primary my-1">Add Student</button>
   </div> -->
@@ -34,14 +34,23 @@
         <td>{{ student.phone }}</td>
         <td>{{ student.gender }}</td>
         <td>
-          <a class="btn btn-primary btn-sm me-2" [routerLink]="['/students/edit', student.studentId]">
-            Edit
-          </a>
 
-          <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.studentId)">
-            Delete
-          </button>
-        </td>
+  <a class="btn btn-primary btn-sm me-2"
+     [routerLink]="['/students/edit', student.studentId]">
+    Edit
+  </a>
+
+  <button class="btn btn-danger btn-sm me-2"
+          (click)="deleteStudent(student.studentId)">
+    Delete
+  </button>
+
+  <a class="btn btn-info btn-sm text-white"
+     [routerLink]="['/students/details', student.studentId]">
+    Details
+  </a>
+
+</td>
       </tr>
       }
     </tbody>

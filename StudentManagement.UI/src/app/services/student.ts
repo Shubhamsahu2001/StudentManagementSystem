@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Student } from '../models/student';
-
+import { StudentDetails } from '../models/student-details';
 @Injectable({
   providedIn: 'root'
 })
@@ -30,6 +30,11 @@ export class StudentService {
 
   deleteStudent(id: number) {
   return this.http.delete(`${this.apiUrl}/${id}`);
+}
+getStudentDetails(id: number) {
+  return this.http.get<StudentDetails>(
+    `https://localhost:7250/api/StudentSubject/student-details/${id}`
+  );
 }
 }
 

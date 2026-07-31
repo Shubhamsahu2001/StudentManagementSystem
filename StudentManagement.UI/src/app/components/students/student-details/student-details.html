@@ -1,0 +1,125 @@
+<div class="container py-4">
+
+  <div class="card shadow-lg border-0">
+
+    <div class="card-header bg-primary text-white py-3">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3 class="mb-0">
+          <i class="bi bi-person-circle me-2"></i>
+          Student Details
+        </h3>
+
+        <a routerLink="/students" class="btn btn-light">
+          <i class="bi bi-arrow-left"></i>
+          Back
+        </a>
+      </div>
+    </div>
+
+    <div class="card-body">
+
+      <div class="row">
+
+        <!-- Left Side -->
+
+        <div class="col-lg-4 text-center">
+
+          <img
+            src="https://ui-avatars.com/api/?name={{student.firstName}}+{{student.lastName}}&background=0D6EFD&color=fff&size=200"
+            class="rounded-circle shadow mb-3"
+            width="180"
+            height="180">
+
+          <h3 class="fw-bold">
+            {{student.firstName}} {{student.lastName}}
+          </h3>
+
+          <span class="badge bg-success fs-6">
+            Student ID : {{student.studentId}}
+          </span>
+
+        </div>
+
+        <!-- Right Side -->
+
+        <div class="col-lg-8">
+
+          <div class="row g-3">
+
+            <div class="col-md-6">
+              <div class="info-box">
+                <small>Email</small>
+                <h6>{{student.email}}</h6>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="info-box">
+                <small>Phone</small>
+                <h6>{{student.phone}}</h6>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="info-box">
+                <small>Gender</small>
+                <h6>{{student.gender}}</h6>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="info-box">
+                <small>Date of Birth</small>
+                <h6>{{student.dob | date:'dd MMM yyyy'}}</h6>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="info-box">
+                <small>Address</small>
+                <h6>{{student.address}}</h6>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <hr class="my-4">
+
+      <h4 class="mb-3">
+        <i class="bi bi-book-fill text-primary"></i>
+        Enrolled Subjects
+      </h4>
+
+      <div class="row">
+
+        <div
+          class="col-md-4 mb-3"
+          *ngFor="let subject of student.subjects">
+
+          <div class="card border-primary shadow-sm">
+
+            <div class="card-body text-center">
+
+              <i class="bi bi-book-half text-primary fs-1"></i>
+
+              <h5 class="mt-3">
+                {{subject}}
+              </h5>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

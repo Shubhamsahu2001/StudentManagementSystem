@@ -1,0 +1,54 @@
+<div class="container mt-4">
+
+  <div class="card">
+
+    <div class="card-header bg-primary text-white">
+      <h3>Add Subject</h3>
+    </div>
+
+    <div class="card-body">
+
+      <form [formGroup]="subjectForm" (ngSubmit)="onSubmit()">
+
+        <!-- Subject Name -->
+        <div class="mb-3">
+          <label class="form-label">Subject Name</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="subjectName">
+        </div>
+
+        <!-- Faculty Name -->
+        <div class="mb-3">
+          <label class="form-label">Faculty Name</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="facultyName">
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            rows="3"
+            formControlName="description">
+          </textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-success">
+          Save Subject
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+

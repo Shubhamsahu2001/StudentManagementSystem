@@ -1,0 +1,43 @@
+<div class="container mt-4">
+
+  <h2 class="text-center mb-4 bg-body-secondary">Subject List</h2>
+  <div class="d-flex justify-content-end mb-3">
+    <a class="btn btn-success" routerLink="/subjects/add">
+      <i class="bi bi-plus-circle"></i> Add Subject
+    </a>
+  </div>
+  <table class="table table-bordered table-hover table-striped">
+
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Subject Name</th>
+        <th>Faculty Name</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (subject of subjects; track subject.subjectId) {
+      <tr>
+        <td>{{ subject.subjectId }}</td>
+        <td>{{ subject.subjectName }}</td>
+        <td>{{ subject.facultyName }}</td>
+        <td>{{ subject.description }}</td>
+        <td>
+          <a class="btn btn-primary btn-sm me-2" [routerLink]="['/subjects/edit', subject.subjectId]">
+            Edit
+          </a>
+
+          <button class="btn btn-danger btn-sm" (click)="deleteSubject(subject.subjectId)">
+            Delete
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+
+  </table>
+
+</div>
